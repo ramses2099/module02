@@ -1,11 +1,9 @@
 import os
-import subprocess as subp
+import re
 
 
 def main():
-    print("env path :" + os.environ.get("PATH"))
-    # ? subp.run(["date"]) no working in windows
-    os.system("cmd /k date")
+    pass
 
 
 if __name__ == "__main__":
