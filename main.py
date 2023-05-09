@@ -1,42 +1,24 @@
 import re
 
+my_list = [27, 5, 9, 6, 8]
+
+def RemoveValue(myVal):
+    if myVal not in my_list:
+        raise ValueError("Value must be in the given list")
+    else:
+        my_list.remove(myVal)
+    return my_list
+
+def OrganizeList(myList):
+    for item in myList:
+        assert type(item) == int, "Word list must be a list of strings"
+    myList.sort()
+    return myList
+
 
 def main():
-    text_to_search = """
-    abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSUVWXYZ
-    0123456789
-    
-    Ha HaHa
-    
-    
-    MetaCharacters (Need to be escaped):
-    . ^ $ * + ? { } [ ] \ | ( )
-    
-    coreyms.com
-    
-    
-    321-433-5439
-    123.555.1234
-    809.555.1234
-    900.555.1234
-    800.555.1234
-    
-    Mr. Schafer
-    Mr Smith
-    Ms Davis
-    Mrs. Robinson
-    Mr. T
-    
-    """
-
-    sentence = "Start a sentence and then bring it to an end"
-
-    pattern = re.compile(r"(Mr|Ms|Mrs)\.?\s[A-Z]\w*")
-    matches = pattern.finditer(text_to_search)
-
-    for match in matches:
-        print(match)
+   print(RemoveValue(27))
+   print(RemoveValue(27))
 
 
 if __name__ == "__main__":
